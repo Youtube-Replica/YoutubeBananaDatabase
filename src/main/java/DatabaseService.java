@@ -5,21 +5,24 @@ import commands.Command;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.postgresql.ds.PGPoolingDataSource;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeoutException;
 
-public class UserService {
+public class DatabaseService {
 
-    private static final String RPC_QUEUE_NAME = "user-request";
-
+    private static final String RPC_QUEUE_NAME = "database-request";
+    private static PGPoolingDataSource source;
     public static void main(String [] argv) {
 
         //initialize thread pool of fixed size
         final ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
+        initDBPool();
 
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("localhost");
@@ -44,16 +47,19 @@ public class UserService {
                     System.out.println("Responding to corrID: "+ properties.getCorrelationId());
 
                     String response = "";
-
+                    java.sql.Connection conn = null;
                     try {
                         String message = new String(body, "UTF-8");
-                        Command cmd = (Command) Class.forName("commands."+getCommand(message)).newInstance();
+                        Command cmd = (Command) Class.forName("commands."+"Fake").newInstance();
+                        conn = source.getConnection();
+
                         HashMap<String, Object> props = new HashMap<String, Object>();
                         props.put("channel", channel);
                         props.put("properties", properties);
                         props.put("replyProps", replyProps);
                         props.put("envelope", envelope);
                         props.put("body", message);
+                        props.put("dbConnection", conn);
 
                         cmd.init(props);
                         executor.submit(cmd);
@@ -61,13 +67,16 @@ public class UserService {
                         System.out.println(" [.] " + e.toString());
                     } catch (IllegalAccessException e) {
                         e.printStackTrace();
-                    } catch (ParseException e) {
-                        e.printStackTrace();
                     } catch (InstantiationException e) {
                         e.printStackTrace();
                     } catch (ClassNotFoundException e) {
                         e.printStackTrace();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
                     } finally {
+                        if (conn != null) {
+                            try { conn.close(); } catch (SQLException e) {}
+                        }
                         synchronized (this) {
                             this.notify();
                         }
@@ -88,10 +97,14 @@ public class UserService {
 //        }
 
     }
-    public static String getCommand(String message) throws ParseException {
-        JSONParser parser = new JSONParser();
-        JSONObject messageJson = (JSONObject) parser.parse(message);
-        String result = messageJson.get("command").toString();
-        return result;
+    public static void initDBPool(){
+        source = new PGPoolingDataSource();
+        source.setDataSourceName("A Data Source");
+        source.setServerName("localhost");
+        source.setDatabaseName("scalable");
+        source.setUser("postgres");
+        source.setPassword("passw0rd");
+        source.setMaxConnections(10);
     }
+
 }
