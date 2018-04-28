@@ -74,9 +74,6 @@ public class DatabaseService {
                     } catch (SQLException e) {
                         e.printStackTrace();
                     } finally {
-                        if (conn != null) {
-                            try { conn.close(); } catch (SQLException e) {}
-                        }
                         synchronized (this) {
                             this.notify();
                         }
@@ -102,8 +99,8 @@ public class DatabaseService {
         source.setDataSourceName("A Data Source");
         source.setServerName("localhost");
         source.setDatabaseName("scalable");
-        source.setUser("postgres");
-        source.setPassword("passw0rd");
+        source.setUser("hazemelagaty");
+        source.setPassword("");
         source.setMaxConnections(10);
     }
 

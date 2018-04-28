@@ -51,14 +51,9 @@ public class Fake extends Command {
     }
 
     public String callDatabase(String callStatement, int outType, JSONArray inputArray, java.sql.Connection conn){
-        String url = "jdbc:postgresql://localhost/scalable";
-        Properties props = new Properties();
-        props.setProperty("user", "postgres");
-        props.setProperty("password", "passw0rd");
 
         JSONArray jsonArray = new JSONArray();
         try {
-            conn = DriverManager.getConnection(url, props);
             conn.setAutoCommit(false);
             CallableStatement upperProc = conn.prepareCall(callStatement);
             if(outType != 0){
@@ -104,6 +99,10 @@ public class Fake extends Command {
             }
          }catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                try { conn.close(); } catch (SQLException e) {}
+            }
         }
         return jsonArray.toString();
     }
