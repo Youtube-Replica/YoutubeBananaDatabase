@@ -81,7 +81,7 @@ public class DatabaseService {
                 }
             };
 
-            channel.basicConsume(RPC_QUEUE_NAME, false, consumer);
+            channel.basicConsume(RPC_QUEUE_NAME, true, consumer);
         } catch (IOException | TimeoutException e) {
             e.printStackTrace();
         }
