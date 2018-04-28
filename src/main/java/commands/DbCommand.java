@@ -15,7 +15,7 @@ import java.sql.*;
 import java.util.HashMap;
 import java.util.Properties;
 
-public class Fake extends Command {
+public class DbCommand extends Command {
 
     public void execute() {
         HashMap<String, Object> props = parameters;

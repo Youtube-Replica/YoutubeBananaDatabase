@@ -50,7 +50,7 @@ public class DatabaseService {
                     java.sql.Connection conn = null;
                     try {
                         String message = new String(body, "UTF-8");
-                        Command cmd = (Command) Class.forName("commands."+"Fake").newInstance();
+                        Command cmd = (Command) Class.forName("commands."+"DbCommand").newInstance();
                         conn = source.getConnection();
 
                         HashMap<String, Object> props = new HashMap<String, Object>();
