@@ -36,11 +36,11 @@ public class DbCommand extends Command {
 
             callStatement = body.get("call_statement").toString();
             outType =Integer.parseInt( body.get("out_type").toString());
-
             inputArray = (JSONArray) body.get("input_array");
             String response = callDatabase(callStatement,outType,inputArray, conn);
-            System.out.println("Sending... "+ response);
+            System.out.println("Sent "+response);
             channel.basicPublish("", properties.getReplyTo(), replyProps, response.getBytes());
+            channel.basicAck(envelope.getDeliveryTag(), false);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ParseException e) {
@@ -52,17 +52,17 @@ public class DbCommand extends Command {
     public String callDatabase(String callStatement, int outType, JSONArray inputArray, java.sql.Connection conn){
 
         JSONArray jsonArray = new JSONArray();
+
         try {
             conn.setAutoCommit(false);
             CallableStatement upperProc = conn.prepareCall(callStatement);
+            int i = 1;
             if(outType != 0){
-
             upperProc.registerOutParameter(1,outType);
+            i++;
             }
 
-            int i = 2;
-            for(int j=0;j < inputArray.size();j++){
-
+            for(int j=0;j<inputArray.size();j++){
                 JSONObject o = (JSONObject) inputArray.get(j);
                 int type = Integer.parseInt(o.get("type").toString());
                 switch (type){
@@ -76,37 +76,56 @@ public class DbCommand extends Command {
                         upperProc.setString(i,value);
                         break;
                     }
+
                 }
                 i++;
             }
             upperProc.execute();
 
+            conn.commit();
+
             switch (outType){
-                case Types.OTHER:
+                case Types.OTHER:{
                 ResultSet rs = (ResultSet) upperProc.getObject(1);
 
                 ResultSetMetaData resultSetMetaData = rs.getMetaData();
                 while (rs.next()) {
-
                     JSONObject json = new JSONObject();
                     for(int j=1;j<resultSetMetaData.getColumnCount()+1;j++){
                     switch (resultSetMetaData.getColumnType(j)){
                         case Types.VARCHAR :
-                            System.out.println("call database");
                             json.put(resultSetMetaData.getColumnName(j),rs.getString(j));
                             break;
                     }
                     }
                     jsonArray.add(json);
                 }
-                rs.close();
-                upperProc.close();
+                    rs.close();
+                break;
+                }
+                case Types.INTEGER: {
+                    JSONObject json = new JSONObject();
+                    json.put("Updated Rows",upperProc.getInt(1));
+                    jsonArray.add(json);
+                    break;
+                }
             }
+
+
          }catch (SQLException e) {
+            if(Integer.parseInt(e.getSQLState()) == 23505){
+                return  "This email already exists.";
+            }
             e.printStackTrace();
-        } finally {
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        finally {
             if (conn != null) {
-                try { conn.close(); } catch (SQLException e) {}
+                try { conn.close(); } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
         }
         return jsonArray.toString();
