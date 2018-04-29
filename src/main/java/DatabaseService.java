@@ -96,9 +96,10 @@ public class DatabaseService {
 
     }
     public static void initDBPool(){
+        String host = System.getenv("POSTGRES_SERVICE_HOST");
         source = new PGPoolingDataSource();
         source.setDataSourceName("A Data Source");
-        source.setServerName("localhost");
+        source.setServerName(host);
         source.setDatabaseName("scalable");
         source.setUser("hazemelagaty");
         source.setPassword("");
