@@ -99,8 +99,8 @@ public class DatabaseService {
         source.setDataSourceName("A Data Source");
         source.setServerName("localhost");
         source.setDatabaseName("scalable");
-        source.setUser("hazemelagaty");
-        source.setPassword("");
+        source.setUser("postgres");
+        source.setPassword("passw0rd");
         source.setMaxConnections(10);
     }
 

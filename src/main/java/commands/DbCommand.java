@@ -66,10 +66,16 @@ public class DbCommand extends Command {
                 JSONObject o = (JSONObject) inputArray.get(j);
                 int type = Integer.parseInt(o.get("type").toString());
                 switch (type){
-                    case Types.INTEGER :
+                    case Types.INTEGER :{
                         int value =  Integer.parseInt(o.get("value").toString());
                         upperProc.setInt(i,value);
                         break;
+                    }
+                    case Types.VARCHAR:{
+                        String value = o.get("value").toString();
+                        upperProc.setString(i,value);
+                        break;
+                    }
                 }
                 i++;
             }
