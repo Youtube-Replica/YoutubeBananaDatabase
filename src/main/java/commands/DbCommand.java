@@ -40,7 +40,6 @@ public class DbCommand extends Command {
             String response = callDatabase(callStatement,outType,inputArray, conn);
             System.out.println("Sent "+response);
             channel.basicPublish("", properties.getReplyTo(), replyProps, response.getBytes());
-            channel.basicAck(envelope.getDeliveryTag(), false);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ParseException e) {

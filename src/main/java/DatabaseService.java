@@ -33,8 +33,6 @@ public class DatabaseService {
 
             channel.queueDeclare(RPC_QUEUE_NAME, false, false, false, null);
 
-            channel.basicQos(1);
-
             System.out.println(" [x] Awaiting RPC requests");
 
             Consumer consumer = new DefaultConsumer(channel) {
@@ -99,8 +97,8 @@ public class DatabaseService {
         source.setDataSourceName("A Data Source");
         source.setServerName("localhost");
         source.setDatabaseName("scalable");
-        source.setUser("postgres");
-        source.setPassword("passw0rd");
+        source.setUser("hazemelagaty");
+        source.setPassword("");
         source.setMaxConnections(10);
     }
 
