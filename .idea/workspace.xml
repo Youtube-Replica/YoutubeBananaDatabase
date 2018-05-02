@@ -2,26 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33703a27-2cea-4dbb-9cbd-7ceffd3cfa8a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_DatabaseService_4_1_21_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_all_4_1_21_Final.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/UserApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DatabaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/CreateUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/Fake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/DeleteUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/RetrieveUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/UpdateUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/psql_functions/Create_Users.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/psql_functions/User_StoredProcedures.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/UserService$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/commands/CreateUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/commands/DeleteUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/commands/RetrieveUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/commands/UpdateUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/DbCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/DbCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DatabaseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DatabaseService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/DbCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/DbCommand.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -40,53 +24,21 @@
       <file leaf-file-name="DatabaseService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/DatabaseService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3">
-              <caret line="82" column="21" lean-forward="true" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
+            <state relative-caret-position="-278">
+              <caret line="27" selection-start-line="27" selection-end-line="29" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2229#2245#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Command.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/commands/Command.java">
+      <file leaf-file-name="DbCommand.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/commands/DbCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="e#358#359#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="36" column="48" lean-forward="true" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Fake.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/commands/Fake.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="57" selection-start-line="57" selection-end-line="57" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Type.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/src.zip!/java/lang/reflect/Type.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+            <state relative-caret-position="305">
+              <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -104,6 +56,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>1111</find>
+      <find>JsonArr</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -128,6 +81,7 @@
         <option value="$PROJECT_DIR$/src/main/java/commands/Fake2.java" />
         <option value="$PROJECT_DIR$/src/main/java/commands/Fake.java" />
         <option value="$PROJECT_DIR$/src/main/java/DatabaseService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/commands/DbCommand.java" />
       </list>
     </option>
   </component>
@@ -138,10 +92,10 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="22" />
-    <option name="width" value="1440" />
-    <option name="height" value="878" />
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="y" value="23" />
+    <option name="width" value="1920" />
+    <option name="height" value="977" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -149,9 +103,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -189,6 +141,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -336,10 +290,10 @@
       <window_info anchor="right" id="Maven Projects" order="1" />
       <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.30922693" />
       <window_info anchor="bottom" id="Version Control" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="3" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.32917705" />
       <window_info id="Capture Tool" order="0" />
       <window_info id="Designer" order="1" />
-      <window_info content_ui="combo" id="Project" order="4" visible="true" weight="0.3297568" />
+      <window_info content_ui="combo" id="Project" order="4" visible="true" weight="0.32403433" />
       <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -358,40 +312,16 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/Command.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DatabaseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="48" column="54" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/commands/DeleteUser.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="47" column="13" lean-forward="true" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/User.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/commands/RetrieveUser.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/User.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/commands/Command.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -405,6 +335,7 @@
           <caret line="48" column="54" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2229#2245#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -438,18 +369,13 @@
           <caret line="48" column="54" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2229#2245#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/commands/RetrieveUser.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="19" column="59" lean-forward="true" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/User.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/commands/RetrieveUser.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/commands/DeleteUser.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/DatabaseService.java">
@@ -491,21 +417,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/commands/DeleteUser.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="47" column="13" lean-forward="true" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/User.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/commands/RetrieveUser.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/User.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/commands/Command.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -535,13 +449,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/commands/DeleteUser.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/commands/UpdateUser.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/psql_functions/User_StoredProcedures.sql" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="78" column="1" selection-start-line="78" selection-start-column="1" selection-end-line="78" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/User.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/rabbitmq/amqp-client/5.1.2/amqp-client-5.1.2.jar!/com/rabbitmq/client/DefaultConsumer.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -556,33 +464,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UserApp.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/ConcreteCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="847">
-          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/src.zip!/java/lang/reflect/Type.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="36" column="48" lean-forward="true" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/ConcreteCommand.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/Fake.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/commands/Command.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -593,23 +476,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="36" column="48" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/src.zip!/java/lang/reflect/Type.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.jar!/org/postgresql/ds/jdbc23/AbstractJdbc23PoolingDataSource.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="201" column="22" selection-start-line="201" selection-start-column="22" selection-end-line="201" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/rabbitmq/amqp-client/5.1.2/amqp-client-5.1.2.jar!/com/rabbitmq/client/Channel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1760">
+          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DatabaseService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3">
-          <caret line="82" column="21" lean-forward="true" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
+        <state relative-caret-position="-278">
+          <caret line="27" selection-start-line="27" selection-end-line="29" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2229#2245#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/Fake.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/DbCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="305">
+          <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
         </state>
       </provider>
     </entry>
