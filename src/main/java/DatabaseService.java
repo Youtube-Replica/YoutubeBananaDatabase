@@ -98,8 +98,8 @@ public class DatabaseService {
         source = new PGPoolingDataSource();
         source.setDataSourceName("A Data Source");
         source.setServerName(host);
-        source.setDatabaseName("scalable");
-        source.setUser("hazemelagaty");
+        source.setDatabaseName("postgres");
+        source.setUser("postgres");
         source.setPassword("");
         source.setMaxConnections(10);
     }
