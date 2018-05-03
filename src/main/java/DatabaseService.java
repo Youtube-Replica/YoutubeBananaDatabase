@@ -2,9 +2,6 @@
 
 import com.rabbitmq.client.*;
 import commands.Command;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 import org.postgresql.ds.PGPoolingDataSource;
 
 import java.io.IOException;
@@ -97,8 +94,8 @@ public class DatabaseService {
         source.setDataSourceName("A Data Source");
         source.setServerName("localhost");
         source.setDatabaseName("scalable");
-        source.setUser("hazemelagaty");
-        source.setPassword("");
+        source.setUser("postgres");
+        source.setPassword("passw0rd");
         source.setMaxConnections(10);
     }
 

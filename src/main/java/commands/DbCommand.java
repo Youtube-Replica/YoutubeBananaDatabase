@@ -32,8 +32,6 @@ public class DbCommand extends Command {
         try {
             JSONParser parser = new JSONParser();
             JSONObject body = (JSONObject) parser.parse((String) props.get("body"));
-
-
             callStatement = body.get("call_statement").toString();
             outType =Integer.parseInt( body.get("out_type").toString());
             inputArray = (JSONArray) body.get("input_array");
@@ -62,6 +60,7 @@ public class DbCommand extends Command {
             }
 
             for(int j=0;j<inputArray.size();j++){
+
                 JSONObject o = (JSONObject) inputArray.get(j);
                 int type = Integer.parseInt(o.get("type").toString());
                 switch (type){
@@ -80,7 +79,6 @@ public class DbCommand extends Command {
                 i++;
             }
             upperProc.execute();
-
             conn.commit();
 
             switch (outType){
@@ -94,6 +92,9 @@ public class DbCommand extends Command {
                     switch (resultSetMetaData.getColumnType(j)){
                         case Types.VARCHAR :
                             json.put(resultSetMetaData.getColumnName(j),rs.getString(j));
+                            break;
+                        case Types.INTEGER:
+                            json.put(resultSetMetaData.getColumnName(j),rs.getInt(j));
                             break;
                     }
                     }
